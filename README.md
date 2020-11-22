@@ -1,6 +1,6 @@
 # Simple Contact Form
 
-Simple contact form. Build with PHP and javascript. Using [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components), Composer and PSR-4 autoloading, Assets boundled with [Webpack](https://webpack.js.org/)
+Simple contact form. Build with PHP and javascript. Using [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components), Composer and PSR-4 autoloading, Assets bundled with [Webpack](https://webpack.js.org/)
 
 
 ## Docker Development Environment
