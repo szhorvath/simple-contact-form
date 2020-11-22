@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "app"
+    }
+  },
+  "require": {
+    "php": "^7.3|^8.0",
+    "twig/twig": "^3.0",
+    "laminas/laminas-diactoros": "^2.5",
+    "nesbot/carbon": "^2.41"
+  }
+}

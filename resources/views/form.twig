@@ -1,0 +1,65 @@
+{% extends "app.twig" %}
+{% block content %}
+
+	<ts-card width="800px">
+		<h2 slot="title">Contact form</h2>
+
+		{% if message %}
+			<div class="alert {{ success == true? 'alert--success': 'alert--danger' }} ">
+				{{ message }}
+			</div>
+		{% endif %}
+
+
+		<form action="/store" method="post" id="contactForm" style="width: 400px">
+			<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+			<div class="field__error">{{errors.first('csrf_token')}}</div>
+
+			<div class="field">
+				<label class="field__label" for="name">Name</label>
+				<div class="field__control">
+					<input class="field__input {% if errors.first('name') %} field__input--error {% endif %}" value="{{ old.name }}" id="name" type="text" name="name" required/>
+					<div class="field__error">{{errors.first('name')}}</div>
+				</div>
+			</div>
+
+			<div class="field">
+				<label class="field__label " for="email">Email</label>
+				<div class="field__control">
+					<input class="field__input {% if errors.first('email') %} field__input--error {% endif %}" id="email" value="{{ old.email }}" type="text" name="email" required/>
+					<div class="field__error">{{errors.first('email')}}</div>
+				</div>
+			</div>
+
+			<div class="field">
+				<label class="field__label" for="phone">Phone</label>
+				<div class="field__control">
+					<input class="field__input {% if errors.first('phone') %} field__input--error {% endif %}" id="phone" value="{{ old.phone }}" type="tel" name="phone" required/>
+					<div class="field__error">{{errors.first('phone')}}</div>
+				</div>
+			</div>
+
+			<div class="field">
+				<label class="field__label" for="message">Message</label>
+				<div class="field__control">
+					<textarea class="field__input {% if errors.first('message') %} field__input--error {% endif %}" id="message" name="message" required>{{ old.message }}</textarea>
+					<div class="field__error">{{errors.first('message')}}</div>
+				</div>
+			</div>
+
+			<div class="field-check">
+				<input class="field-check__input" type="checkbox" id="subscribe" name="subscribe" {% if old.subscribe %} checked {% endif %}/>
+				<label class="field-check__label" for="subscribe">
+					Subscribe to newsletter
+				</label>
+			</div>
+
+			<div class="field">
+				<button class="btn btn__primary btn--block" type="submit">
+					Submit
+				</button>
+			</div>
+		</form>
+	</ts-card>
+
+{% endblock %}
