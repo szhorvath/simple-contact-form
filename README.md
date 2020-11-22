@@ -27,7 +27,7 @@ This project uses the following ports :
 ```
 
 
-### MySql credentials can be set
+### MySQL credentials can be set
 
 
 
