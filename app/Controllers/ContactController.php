@@ -86,8 +86,8 @@ class ContactController
             ]))->withHeader('Content-Type', 'text/html; charset=UTF-8');
         };
 
-        header("Location: sent");
-        exit();
+
+        return $response->withHeader('Location', 'sent');
     }
 
     protected function process($data)
@@ -190,7 +190,7 @@ class ContactController
     protected function fetchLeadById($id)
     {
         $statement = $this->db->prepare("SELECT * FROM leads WHERE id = :id");
-        $statement->bindParam(':id', strtolower($id), PDO::PARAM_STR);
+        $statement->bindParam(':id', $id, PDO::PARAM_STR);
         $statement->execute();
         $statement->setFetchMode(PDO::FETCH_CLASS, Lead::class);
         return $statement->fetch();
