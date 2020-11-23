@@ -57,6 +57,8 @@ services:
   mail:
     image: mailhog/mailhog:latest
     container_name: mail
+    restart: unless-stopped
+    tty: true
     ports:
       - "1025:1025"
       - "8025:8025"

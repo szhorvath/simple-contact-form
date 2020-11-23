@@ -7,6 +7,8 @@ Simple contact form. Build with PHP and javascript. Using [Web Components](https
 
 Run `docker-compose up -d`
 
+Run `composer install`
+
 
 This project uses the following ports :
 
