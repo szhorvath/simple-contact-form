@@ -107,7 +107,7 @@ class ContactController
         $messageId = $this->insertMessage($lead, $data);
         $message = $this->fetchMessageById($messageId);
 
-        $date = $message->createdAtHuman();
+        $date = $message->created_at->toDateTimeString();
 
         $body = <<<EOD
             Name: $lead->name
