@@ -77,13 +77,6 @@ class ContactController
             'user_agent' => $request->getServerParams()['HTTP_USER_AGENT'],
         ];
 
-
-        try {
-            $this->process($data);
-        } catch (\Throwable $th) {
-            print_r($th->getMessage());
-        }
-
         if (!$this->process($data)) {
             return $response->setBody($this->c->view->render('form.twig', [
                 'success' => false,
